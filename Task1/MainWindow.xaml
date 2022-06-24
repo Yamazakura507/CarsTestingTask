@@ -1,0 +1,66 @@
+﻿<Window x:Class="Task1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="520" MinHeight="520" MaxHeight="520" MinWidth="380" MaxWidth="380" Width="380">
+    <StackPanel Orientation="Vertical">
+        <Label Content="Введите расход"/>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="LitersFuelTextBox" Margin="2" MinWidth="30" MaxLines="4"/>
+            <Label Content="/"/>
+            <TextBox x:Name="KilometrsFuelTextBox" Margin="2" MinWidth="30" MaxLines="4"/>
+            <Label Content="л/км"/>
+        </StackPanel>
+
+        <Label Content="Введите скорость"/>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="SpeedKilometersTextBox" Margin="2" MinWidth="30" MaxLines="4"/>
+            <Label Content="/"/>
+            <TextBox x:Name="SpeedTimeTextBox" Margin="2" MinWidth="30" MaxLines="4"/>
+            <Label Content="км/ч"/>
+        </StackPanel>
+
+        <Label Content="Введите объём топливного бака"/>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="FuelTankVolumeTextBox" Margin="2" MinWidth="30" MaxLines="4"/>
+            <Label Content="л"/>
+        </StackPanel>
+
+        <Label Content="Введите количество топлива"/>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="FuelCountTextBox" Margin="2" MinWidth="30" MaxLines="4"/>
+            <Label Content="л"/>
+        </StackPanel>
+
+
+        <RadioButton Checked="SuperCarCheckBoxOnChecked" x:Name="SuperCarCheckBox" Content="Спортивный" IsChecked="True" GroupName="CarType"/>
+        <RadioButton Checked="SmallCarCheckBoxOnChecked" x:Name="SmallCarCheckBox" Content="Легковой" GroupName="CarType"/>
+        <RadioButton Checked="BigCarCheckBoxOnChecked" x:Name="BigCarCheckBox" Content="Грузовой" GroupName="CarType"/>
+
+        <Label x:Name="CargoText" Visibility="Collapsed" Content="Дополнитеьный груз"/>
+        
+        <StackPanel Visibility="Collapsed" Orientation="Horizontal" x:Name="CargoPanel">
+            <TextBox x:Name="CargoTextBox" Margin="2" MinWidth="30" MaxLines="4"/>
+            <Label x:Name="CargoLabel" Content="кг"/>
+        </StackPanel>
+
+        <Label x:Name="MaxCargoText" Visibility="Collapsed" Content="Предельное значение дополнитеьного груза"/>
+        
+        <StackPanel Visibility="Collapsed" Orientation="Horizontal" x:Name="MaxCargoPanel">
+            <TextBox x:Name="MaxCargoTextBox" Margin="2" MinWidth="30" MaxLines="4"/>
+            <Label x:Name="MaxCargoLabel" Content="кг"/>
+        </StackPanel>
+        
+        <Button Click="ButtonOnClick" Margin="5" Content="Расчитать" MinWidth="100" HorizontalAlignment="Left"/>
+
+
+        <TextBox AcceptsReturn="True" TextWrapping="Wrap"  ScrollViewer.VerticalScrollBarVisibility="Visible" Text="" x:Name="ResultLabel"/>
+    </StackPanel>
+</Window>
